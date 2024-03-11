@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Favorites</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>GitHub Favorites</h1>
+            <div class="search">
+                <label class="sr-only" for="inputSearch">Usuários do GitHub</label>
+                <input id="inputSearch" type="text" placeholder="Usuários do GitHub">
+                <button>&plus;</button>
+            </div>
+        </header>
+        <table></table>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Repositórios</th>
+                <th>seguidores</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="user">
+                    <img src="https://github.com/lucasBalbueno.png" alt="Imagem de Usuário">
+                    <a href="https://www.github.com/lucasBalbueno" target="_blank">
+                        <p>Lucas Balbueno</p>
+                        <span>lucasBalbueno</span>
+                    </a>
+                    <span></span>
+                </td>
+                <td class="repositories">
+                    356
+                </td>
+                <td class="followers">
+                    45
+                </td>
+                <td>
+                    <button>&times;</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</body>
+</html>
