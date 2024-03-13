@@ -21,9 +21,21 @@ export class Favorites {
             name:'Diego Fernandes',
             public_repos: '233',
             followers: '124'
+        },
+        {
+            login:'maykbrito',
+            name:'Mayk Brito',
+            public_repos: '100',
+            followers: '100'
         }
     ]
 
+    }
+
+    delete(user) {
+        const filteredEntries = this.entries.filter((entry) => entry.login !== user.login)
+
+        console.log(filteredEntries)
     }
 }
 
@@ -41,6 +53,13 @@ export class FavoritesView extends Favorites {
 
         this.entries.forEach( user => {
         const row = this.createRow(user.login, user.name, user.public_repos, user.followers)
+
+        row.querySelector('.remove').onclick = () => {
+            const isOk = confirm(`Deseja remover ${user.name} dos favoritos?`)
+            if(isOk) {
+                this.delete(user)
+            }
+        }
 
         this.tbody.append(row);
         })
@@ -70,7 +89,7 @@ export class FavoritesView extends Favorites {
 
     removeAllTr() {
         this.tbody.querySelectorAll('tr').forEach(tr => {
-            console.log(tr.remove())
+            tr.remove()
         })
     }
 }
